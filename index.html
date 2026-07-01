@@ -1,0 +1,2982 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norven Course — Tempat Asyik Belajar Musik</title>
+    <link rel="icon" href="images/norvenc.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Caveat:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --n950: #060C28;
+            --n900: #0E1640;
+            --n800: #161E54;
+            --n700: #212C72;
+            --n600: #2D3A8C;
+            --sun: #FFC845;
+            --sun2: #FFE28A;
+            --coral: #FF6F59;
+            --coral2: #FFB4A9;
+            --mint: #54E1C2;
+            --mint2: #A8F0E4;
+            --violet: #9C88FF;
+            --cream: #FFF8EC;
+            --cream2: #FFF0D6;
+            --white: #FFFFFF;
+            --muted: #B9C2EC;
+            --ink: #0E1640;
+            --sh-sm: 0 4px 14px -4px rgba(14, 22, 64, .18);
+            --sh-md: 0 12px 32px -10px rgba(14, 22, 64, .28);
+            --sh-lg: 0 24px 60px -18px rgba(14, 22, 64, .4);
+            --ease-b: cubic-bezier(.34, 1.56, .64, 1);
+            --ease-o: cubic-bezier(.22, 1, .36, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--cream);
+            color: var(--ink);
+            line-height: 1.65;
+            overflow-x: hidden
+        }
+
+        img {
+            display: block;
+            max-width: 100%
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        ul {
+            list-style: none
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            background: none
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            line-height: 1.1
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 clamp(18px, 5vw, 52px)
+        }
+
+        .section {
+            padding: 96px 0 88px;
+            position: relative
+        }
+
+        .sec-navy {
+            background: var(--n800);
+            color: var(--white)
+        }
+
+        .sec-deep {
+            background: var(--n900);
+            color: var(--white)
+        }
+
+        .sec-cream {
+            background: var(--cream)
+        }
+
+        .eyebrow {
+            font-family: 'Caveat', cursive;
+            font-weight: 700;
+            font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px
+        }
+
+        .sec-head {
+            max-width: 640px;
+            margin-bottom: 58px
+        }
+
+        .sec-head.center {
+            margin: 0 auto 58px;
+            text-align: center
+        }
+
+        .sec-title {
+            font-size: clamp(2rem, 3.5vw, 2.9rem)
+        }
+
+        .sec-sub {
+            margin-top: 14px;
+            font-size: 1.04rem;
+            opacity: .85
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 30px;
+            border-radius: 999px;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all .3s var(--ease-b);
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden
+        }
+
+        .btn-sun {
+            background: var(--sun);
+            color: var(--n900);
+            box-shadow: 0 8px 24px -6px rgba(255, 200, 69, .55)
+        }
+
+        .btn-sun:hover {
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 0 32px rgba(255, 200, 69, .5)
+        }
+
+        .btn-coral {
+            background: var(--coral);
+            color: var(--white);
+            box-shadow: 0 8px 24px -6px rgba(255, 111, 89, .45)
+        }
+
+        .btn-coral:hover {
+            transform: translateY(-4px) scale(1.04)
+        }
+
+        .btn-mint {
+            background: var(--mint);
+            color: var(--n900)
+        }
+
+        .btn-mint:hover {
+            transform: translateY(-4px) scale(1.04)
+        }
+
+        .btn-outline-w {
+            border: 2px solid rgba(255, 255, 255, .4);
+            color: var(--white)
+        }
+
+        .btn-outline-w:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, .08);
+            border-color: rgba(255, 255, 255, .7)
+        }
+
+        .btn-outline-d {
+            border: 2px solid var(--n800);
+            color: var(--n800)
+        }
+
+        .btn-outline-d:hover {
+            transform: translateY(-4px);
+            background: var(--n800);
+            color: var(--white)
+        }
+
+        .btn-lg {
+            padding: 16px 36px;
+            font-size: 1.08rem
+        }
+
+        .btn-shine::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .25), transparent);
+            animation: shine 3s ease infinite
+        }
+
+        @keyframes shine {
+            0% {
+                left: -100%
+            }
+
+            40%,
+            100% {
+                left: 200%
+            }
+        }
+
+        /* ANIMATIONS */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(var(--r, 0deg))
+            }
+
+            50% {
+                transform: translateY(-14px) rotate(var(--r, 0deg))
+            }
+        }
+
+        @keyframes float2 {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-10px)
+            }
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        @keyframes spin-r {
+            to {
+                transform: rotate(-360deg)
+            }
+        }
+
+        @keyframes wiggle {
+
+            0%,
+            100% {
+                transform: rotate(0)
+            }
+
+            20% {
+                transform: rotate(-10deg)
+            }
+
+            40% {
+                transform: rotate(10deg)
+            }
+
+            60% {
+                transform: rotate(-6deg)
+            }
+
+            80% {
+                transform: rotate(6deg)
+            }
+        }
+
+        @keyframes pop-in {
+            from {
+                transform: scale(.5);
+                opacity: 0
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1
+            }
+        }
+
+        @keyframes pulse-ring {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 200, 69, .5)
+            }
+
+            50% {
+                box-shadow: 0 0 0 16px rgba(255, 200, 69, 0)
+            }
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0 50%
+            }
+
+            50% {
+                background-position: 100% 50%
+            }
+
+            100% {
+                background-position: 0 50%
+            }
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(0)
+            }
+
+            to {
+                transform: translateX(-50%)
+            }
+        }
+
+        @keyframes bounce-in {
+            0% {
+                transform: translateY(60px);
+                opacity: 0
+            }
+
+            60% {
+                transform: translateY(-8px)
+            }
+
+            80% {
+                transform: translateY(4px)
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1
+            }
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1)
+            }
+
+            14% {
+                transform: scale(1.09)
+            }
+
+            28% {
+                transform: scale(1)
+            }
+
+            42% {
+                transform: scale(1.05)
+            }
+        }
+
+        @keyframes tilt {
+
+            0%,
+            100% {
+                transform: rotate(-3deg)
+            }
+
+            50% {
+                transform: rotate(3deg)
+            }
+        }
+
+        @keyframes wave {
+
+            0%,
+            100% {
+                transform: rotate(0)
+            }
+
+            20% {
+                transform: rotate(-25deg)
+            }
+
+            40% {
+                transform: rotate(10deg)
+            }
+
+            60% {
+                transform: rotate(-20deg)
+            }
+
+            80% {
+                transform: rotate(5deg)
+            }
+        }
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 6px rgba(255, 200, 69, .6))
+            }
+
+            50% {
+                filter: drop-shadow(0 0 18px rgba(255, 200, 69, .9))
+            }
+        }
+
+        @keyframes card-dance {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0)
+            }
+
+            25% {
+                transform: translateY(-5px) rotate(.5deg)
+            }
+
+            75% {
+                transform: translateY(-3px) rotate(-.5deg)
+            }
+        }
+
+        /* REVEAL */
+        .rv {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity .7s var(--ease-o), transform .7s var(--ease-o)
+        }
+
+        .rv.in {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        .rv-l {
+            opacity: 0;
+            transform: translateX(-36px);
+            transition: opacity .7s var(--ease-o), transform .7s var(--ease-o)
+        }
+
+        .rv-l.in {
+            opacity: 1;
+            transform: translateX(0)
+        }
+
+        .rv-r {
+            opacity: 0;
+            transform: translateX(36px);
+            transition: opacity .7s var(--ease-o), transform .7s var(--ease-o)
+        }
+
+        .rv-r.in {
+            opacity: 1;
+            transform: translateX(0)
+        }
+
+        .rv-s {
+            opacity: 0;
+            transform: scale(.88);
+            transition: opacity .6s var(--ease-o), transform .6s var(--ease-b)
+        }
+
+        .rv-s.in {
+            opacity: 1;
+            transform: scale(1)
+        }
+
+        [data-delay] {
+            transition-delay: var(--dl, 0ms)
+        }
+
+        /* NAV */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            background: rgba(14, 22, 64, .88);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
+            transition: background .3s, box-shadow .3s
+        }
+
+        .nav.scrolled {
+            background: rgba(14, 22, 64, .98);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, .3)
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px clamp(18px, 5vw, 52px);
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+
+        .logo-badge {
+            width: 42px;
+            height: 42px;
+            border-radius: 13px;
+            background: linear-gradient(135deg, var(--sun), var(--n600), var(--n900));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            animation: tilt 4s ease-in-out infinite
+        }
+
+        .logo-badge svg {
+            width: 22px;
+            height: 22px;
+            color: var(--n900)
+        }
+
+        .logo-text {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            font-size: 1.35rem;
+            color: var(--white)
+        }
+
+        .logo-text em {
+            color: var(--sun);
+            font-style: normal
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-weight: 600;
+            font-size: .94rem;
+            transition: color .2s;
+            position: relative;
+            padding: 6px 0
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 0;
+            background: var(--sun);
+            transition: width .3s var(--ease-o);
+            border-radius: 99px
+        }
+
+        .nav-links a:hover {
+            color: var(--white)
+        }
+
+        .nav-links a:hover::after {
+            width: 100%
+        }
+
+        .nav-end {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .nav-end .btn {
+            padding: 10px 22px;
+            font-size: .9rem
+        }
+
+        .hbg {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            width: 40px;
+            height: 40px;
+            padding: 9px;
+            align-items: flex-end;
+            justify-content: center
+        }
+
+        .hbg span {
+            display: block;
+            height: 2.5px;
+            background: var(--white);
+            border-radius: 99px;
+            transition: all .3s var(--ease-o)
+        }
+
+        .hbg span:nth-child(1) {
+            width: 100%
+        }
+
+        .hbg span:nth-child(2) {
+            width: 72%
+        }
+
+        .hbg span:nth-child(3) {
+            width: 88%
+        }
+
+        .hbg.open span:nth-child(1) {
+            transform: translateY(7.5px) rotate(45deg);
+            width: 100%
+        }
+
+        .hbg.open span:nth-child(2) {
+            opacity: 0;
+            transform: translateX(8px)
+        }
+
+        .hbg.open span:nth-child(3) {
+            transform: translateY(-7.5px) rotate(-45deg);
+            width: 100%
+        }
+
+        .mob-menu {
+            display: none;
+            flex-direction: column;
+            background: var(--n900);
+            border-top: 1px solid rgba(255, 255, 255, .06);
+            padding: 14px clamp(18px, 5vw, 52px) 28px;
+            gap: 4px
+        }
+
+        .mob-menu.open {
+            display: flex
+        }
+
+        .mob-menu a {
+            color: rgba(255, 255, 255, .9);
+            font-weight: 600;
+            padding: 14px 4px;
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
+            transition: color .2s
+        }
+
+        .mob-menu a:hover {
+            color: var(--sun)
+        }
+
+        .mob-menu .btn {
+            margin-top: 14px
+        }
+
+        /* HERO */
+        .hero {
+            background: var(--n800);
+            color: var(--white);
+            padding: 172px 0 120px;
+            position: relative;
+            overflow: hidden
+        }
+
+        #heroCanvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0
+        }
+
+        .hero-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: .12;
+            pointer-events: none
+        }
+
+        .hero-blob.b1 {
+            width: 480px;
+            height: 480px;
+            background: var(--coral);
+            top: -100px;
+            right: -80px;
+            animation: float2 10s ease-in-out infinite
+        }
+
+        .hero-blob.b2 {
+            width: 320px;
+            height: 320px;
+            background: var(--mint);
+            bottom: -80px;
+            left: 4%;
+            animation: float2 8s ease-in-out .6s infinite
+        }
+
+        .hero-blob.b3 {
+            width: 240px;
+            height: 240px;
+            background: var(--violet);
+            top: 35%;
+            left: 32%;
+            animation: float2 12s ease-in-out 1s infinite
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 52px;
+            align-items: center;
+            position: relative;
+            z-index: 1
+        }
+
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, .09);
+            border: 1px solid rgba(255, 255, 255, .14);
+            padding: 8px 18px;
+            border-radius: 999px;
+            font-size: .88rem;
+            font-weight: 600;
+            color: var(--mint);
+            margin-bottom: 22px;
+            animation: pop-in .6s var(--ease-b) .2s both
+        }
+
+        .hero-pulse {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--mint);
+            animation: pulse-ring 2s infinite
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+            animation: pop-in .7s var(--ease-b) .3s both
+        }
+
+        .hero h1 .grad {
+            background: linear-gradient(90deg, var(--sun), var(--coral), var(--mint), var(--violet));
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 5s linear infinite
+        }
+
+        .hero h1 .wob {
+            display: inline-block;
+            animation: wiggle 3s ease-in-out 2s infinite
+        }
+
+        .hero-sub {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, .72);
+            margin-top: 22px;
+            max-width: 490px;
+            animation: pop-in .7s var(--ease-b) .5s both
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            margin-top: 36px;
+            flex-wrap: wrap;
+            animation: pop-in .7s var(--ease-b) .6s both
+        }
+
+        .hero-trust {
+            display: flex;
+            gap: 32px;
+            margin-top: 52px;
+            flex-wrap: wrap;
+            animation: pop-in .7s var(--ease-b) .7s both;
+            padding-top: 44px;
+            border-top: 1px solid rgba(255, 255, 255, .1)
+        }
+
+        .trust-num {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.65rem;
+            color: var(--sun);
+            display: block;
+            line-height: 1
+        }
+
+        .trust-lbl {
+            font-size: .82rem;
+            color: var(--muted)
+        }
+
+        /* HERO ART */
+        .hero-art {
+            position: relative;
+            height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .hero-rings {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none
+        }
+
+        .ring-svg {
+            animation: spin 35s linear infinite
+        }
+
+        .ring-svg.r2 {
+            animation: spin-r 22s linear infinite
+        }
+
+        .hero-center {
+            width: 196px;
+            height: 196px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--n700), var(--n900));
+            border: 2px solid rgba(255, 255, 255, .1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 0 60px rgba(84, 225, 194, .12), 0 0 120px rgba(255, 200, 69, .07)
+        }
+
+        .hero-center-inner {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--n600);
+            border: 2px solid rgba(255, 255, 255, .1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.6rem;
+            animation: spin 8s linear infinite
+        }
+
+        .h-icon {
+            position: absolute;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.9rem;
+            box-shadow: var(--sh-md);
+            animation: float var(--dur, 5s) ease-in-out var(--dl, 0s) infinite
+        }
+
+        .h-icon.i1 {
+            width: 82px;
+            height: 82px;
+            background: var(--sun);
+            top: 8%;
+            left: 4%;
+            border-radius: 28px;
+            --r: -8deg;
+            transform: rotate(-8deg);
+            --dur: 6s
+        }
+
+        .h-icon.i2 {
+            width: 72px;
+            height: 72px;
+            background: var(--coral);
+            top: 6%;
+            right: 8%;
+            border-radius: 24px;
+            --dl: .5s;
+            --dur: 5.2s;
+            transform: rotate(6deg)
+        }
+
+        .h-icon.i3 {
+            width: 90px;
+            height: 90px;
+            background: var(--white);
+            bottom: 14%;
+            left: 6%;
+            border-radius: 28px;
+            --dl: 1s;
+            --dur: 7s;
+            transform: rotate(-5deg)
+        }
+
+        .h-icon.i4 {
+            width: 78px;
+            height: 78px;
+            background: var(--mint);
+            bottom: 10%;
+            right: 4%;
+            border-radius: 24px;
+            --dl: .8s;
+            --dur: 5.6s;
+            transform: rotate(8deg)
+        }
+
+        .h-icon.i5 {
+            width: 62px;
+            height: 62px;
+            background: var(--violet);
+            top: 50%;
+            left: 0%;
+            border-radius: 20px;
+            --dl: 1.3s;
+            --dur: 4.8s;
+            transform: rotate(-6deg)
+        }
+
+        .h-icon.i6 {
+            width: 66px;
+            height: 66px;
+            background: var(--n900);
+            border: 2px solid var(--mint);
+            top: 52%;
+            right: 0%;
+            border-radius: 22px;
+            --dl: .3s;
+            --dur: 6.4s;
+            transform: rotate(5deg);
+            color: var(--mint)
+        }
+
+        .spark {
+            position: absolute;
+            pointer-events: none;
+            animation: wiggle 2s ease-in-out var(--dl, 0s) infinite
+        }
+
+        /* MARQUEE BAND */
+        .marquee-band {
+            background: var(--sun);
+            padding: 15px 0;
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+            transform: rotate(-1.2deg) scaleX(1.05);
+            margin: -6px 0;
+            box-shadow: 0 6px 24px rgba(255, 200, 69, .3)
+        }
+
+        .marquee-track {
+            display: flex;
+            animation: marquee 22s linear infinite;
+            width: max-content
+        }
+
+        .marquee-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 0 20px;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            font-size: 1.04rem;
+            color: var(--n900);
+            white-space: nowrap
+        }
+
+        .marquee-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--n900);
+            opacity: .4
+        }
+
+        /* STATS */
+        .stats-strip {
+            background: var(--n950);
+            padding: 60px 0
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            text-align: center
+        }
+
+        .stat-icon {
+            font-size: 1.7rem;
+            display: block;
+            margin-bottom: 8px;
+            animation: float2 4s ease-in-out var(--dl, 0s) infinite
+        }
+
+        .stat-num {
+            font-family: 'Fredoka', sans-serif;
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            color: var(--sun);
+            display: block;
+            line-height: 1;
+            margin-bottom: 6px
+        }
+
+        .stat-lbl {
+            font-size: .87rem;
+            color: var(--muted)
+        }
+
+        /* ABOUT */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 68px;
+            align-items: center
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+            line-height: 1.8;
+            opacity: .88
+        }
+
+        .about-fact {
+            background: var(--n900);
+            color: var(--white);
+            border-radius: 20px;
+            padding: 22px 26px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            margin-top: 28px;
+            border-left: 4px solid var(--sun)
+        }
+
+        .fact-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+            animation: wiggle 3s ease infinite
+        }
+
+        .fact-text {
+            font-size: .92rem;
+            line-height: 1.6
+        }
+
+        .fact-text strong {
+            display: block;
+            color: var(--sun);
+            font-size: 1rem;
+            margin-bottom: 4px
+        }
+
+        .about-art {
+            position: relative
+        }
+
+        .about-art-frame {
+            border-radius: 28px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: var(--sh-lg)
+        }
+
+        .about-art-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .5s ease
+        }
+
+        .about-art-frame:hover img {
+            transform: scale(1.04)
+        }
+
+        .a-sticker {
+            position: absolute;
+            background: var(--white);
+            border-radius: 18px;
+            padding: 12px 18px;
+            box-shadow: var(--sh-md);
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: .88rem;
+            color: var(--ink);
+            z-index: 3
+        }
+
+        .a-sticker.s1 {
+            top: -16px;
+            right: -16px;
+            background: var(--sun);
+            color: var(--n900);
+            transform: rotate(5deg);
+            animation: float2 5s ease-in-out infinite
+        }
+
+        .a-sticker.s2 {
+            bottom: -16px;
+            left: -16px;
+            background: var(--n800);
+            color: var(--white);
+            transform: rotate(-4deg);
+            animation: float2 6s ease-in-out .4s infinite
+        }
+
+        .a-sticker.s3 {
+            top: 44%;
+            right: -20px;
+            background: var(--mint);
+            color: var(--n900);
+            transform: rotate(3deg);
+            animation: float2 4.5s ease-in-out .8s infinite
+        }
+
+        /* PROGRAMS */
+        .prog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px
+        }
+
+        .prog-card {
+            background: var(--n700);
+            border-radius: 26px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, .07);
+            transition: transform .4s var(--ease-b), box-shadow .4s ease;
+            cursor: pointer;
+            position: relative
+        }
+
+        .prog-card:hover {
+            transform: translateY(-12px) rotate(-1deg);
+            box-shadow: var(--sh-lg)
+        }
+
+        .prog-card:nth-child(2):hover {
+            transform: translateY(-12px) rotate(1deg)
+        }
+
+        .prog-card:nth-child(4):hover {
+            transform: translateY(-12px) rotate(1deg)
+        }
+
+        .prog-img {
+            height: 210px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .prog-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .6s ease
+        }
+
+        .prog-card:hover .prog-img img {
+            transform: scale(1.1)
+        }
+
+        .prog-img-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(22, 30, 84, .85) 25%, transparent 70%)
+        }
+
+        .prog-emoji {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 50px;
+            height: 50px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, .15);
+            font-size: 1.55rem;
+            border: 1px solid rgba(255, 255, 255, .2)
+        }
+
+        .prog-img-fallback {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            opacity: .4
+        }
+
+        .prog-body {
+            padding: 24px 22px
+        }
+
+        .prog-card h3 {
+            color: var(--white);
+            font-size: 1.28rem;
+            margin-bottom: 7px
+        }
+
+        .prog-card p {
+            color: var(--muted);
+            font-size: .9rem;
+            line-height: 1.6;
+            margin-bottom: 16px
+        }
+
+        .prog-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap
+        }
+
+        .prog-tag {
+            font-size: .75rem;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .1);
+            color: var(--white)
+        }
+
+        .prog-color {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0
+        }
+
+        /* WHY */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px
+        }
+
+        .why-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 4px 24px -10px rgba(14, 22, 64, .16);
+            transition: transform .35s var(--ease-b), box-shadow .35s ease;
+            position: relative;
+            overflow: hidden
+        }
+
+        .why-card::after {
+            content: '';
+            position: absolute;
+            bottom: -44px;
+            right: -44px;
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            opacity: .1;
+            transition: transform .4s ease
+        }
+
+        .why-card:hover::after {
+            transform: scale(1.5)
+        }
+
+        .why-card:hover {
+            transform: translateY(-8px) rotate(-.5deg);
+            box-shadow: var(--sh-md)
+        }
+
+        .why-card.wc1::after {
+            background: var(--sun)
+        }
+
+        .why-card.wc2::after {
+            background: var(--mint)
+        }
+
+        .why-card.wc3::after {
+            background: var(--coral)
+        }
+
+        .why-card.wc4::after {
+            background: var(--violet)
+        }
+
+        .why-card.wc5::after {
+            background: var(--sun)
+        }
+
+        .why-card.wc6::after {
+            background: var(--mint)
+        }
+
+        .why-icon {
+            width: 54px;
+            height: 54px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.65rem;
+            margin-bottom: 16px;
+            transition: transform .3s var(--ease-b)
+        }
+
+        .why-card:hover .why-icon {
+            animation: wiggle .5s ease
+        }
+
+        .why-card h3 {
+            font-size: 1.08rem;
+            margin-bottom: 8px
+        }
+
+        .why-card p {
+            font-size: .9rem;
+            opacity: .75;
+            line-height: 1.65
+        }
+
+        /* TEACHER SPOTLIGHT */
+        .teacher-wrap {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 72px;
+            align-items: center
+        }
+
+        .teacher-photo-col {
+            position: relative;
+            display: flex;
+            justify-content: center
+        }
+
+        .teacher-frame {
+            width: 320px;
+            height: 400px;
+            border-radius: 32px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--sh-lg);
+            flex-shrink: 0
+        }
+
+        .teacher-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center
+        }
+
+        .teacher-frame::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(22, 30, 84, .8) 0%, transparent 55%);
+            pointer-events: none
+        }
+
+        .t-ring {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+
+        .t-ring.r1 {
+            width: 400px;
+            height: 400px;
+            border: 2px dashed rgba(255, 200, 69, .22);
+            animation: spin 22s linear infinite
+        }
+
+        .t-ring.r2 {
+            width: 340px;
+            height: 340px;
+            border: 2px dashed rgba(84, 225, 194, .18);
+            animation: spin-r 16s linear infinite
+        }
+
+        .t-stick {
+            position: absolute;
+            z-index: 3;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 11px 16px;
+            box-shadow: var(--sh-md);
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-size: .87rem;
+            color: var(--ink)
+        }
+
+        .t-stick.ts1 {
+            top: -16px;
+            right: -24px;
+            background: var(--sun);
+            color: var(--n900);
+            transform: rotate(5deg);
+            animation: float2 5s ease-in-out infinite
+        }
+
+        .t-stick.ts2 {
+            bottom: -16px;
+            left: -24px;
+            background: var(--coral);
+            color: var(--white);
+            transform: rotate(-4deg);
+            animation: float2 6s ease-in-out .4s infinite
+        }
+
+        .t-stick.ts3 {
+            bottom: 28%;
+            right: -28px;
+            background: var(--mint);
+            color: var(--n900);
+            transform: rotate(4deg);
+            animation: float2 4.5s ease-in-out .8s infinite
+        }
+
+        .teacher-info .eyebrow {
+            color: var(--sun)
+        }
+
+        .teacher-info h2 {
+            font-size: clamp(1.9rem, 3vw, 2.6rem);
+            color: var(--white);
+            margin-bottom: 10px
+        }
+
+        .t-role {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .12);
+            color: var(--mint);
+            padding: 8px 18px;
+            border-radius: 999px;
+            font-size: .88rem;
+            font-weight: 700;
+            margin-bottom: 22px
+        }
+
+        .teacher-bio {
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 28px;
+            font-size: .95rem
+        }
+
+        .t-instr {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 28px
+        }
+
+        .t-chip {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, .07);
+            color: var(--white);
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-size: .9rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, .08);
+            transition: all .3s var(--ease-b)
+        }
+
+        .t-chip:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, .15)
+        }
+
+        .t-chip .ic {
+            font-size: 1.15rem
+        }
+
+        .t-facts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin: 28px 0
+        }
+
+        .fact-card {
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 16px;
+            padding: 16px;
+            display: flex;
+            gap: 12px;
+            transition: all .3s var(--ease-b)
+        }
+
+        .fact-card:hover {
+            transform: scale(1.04) rotate(-1deg);
+            background: rgba(255, 255, 255, .1)
+        }
+
+        .fact-card .ico {
+            font-size: 1.55rem;
+            flex-shrink: 0
+        }
+
+        .fact-card .txt {
+            font-size: .84rem;
+            color: var(--muted);
+            line-height: 1.45
+        }
+
+        .fact-card .txt strong {
+            display: block;
+            font-size: .75rem;
+            color: rgba(255, 255, 255, .4);
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            margin-bottom: 3px
+        }
+
+        .t-quote {
+            background: rgba(255, 255, 255, .05);
+            border-radius: 18px;
+            padding: 22px;
+            border-left: 4px solid var(--sun);
+            font-family: 'Caveat', cursive;
+            font-size: 1.3rem;
+            color: var(--white);
+            line-height: 1.5
+        }
+
+        .t-quote cite {
+            display: block;
+            margin-top: 8px;
+            font-style: normal;
+            font-size: .82rem;
+            opacity: .5;
+            font-family: 'Plus Jakarta Sans', sans-serif
+        }
+
+        /* TESTIMONIALS */
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px
+        }
+
+        .testi-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 28px;
+            box-shadow: 0 4px 24px -10px rgba(14, 22, 64, .16);
+            transition: transform .35s var(--ease-b), box-shadow .35s ease;
+            position: relative
+        }
+
+        .testi-card::before {
+            content: '\201C';
+            font-family: Georgia, serif;
+            font-size: 5.5rem;
+            line-height: 1;
+            color: var(--cream2);
+            position: absolute;
+            top: 8px;
+            right: 18px;
+            pointer-events: none
+        }
+
+        .testi-card:hover {
+            transform: translateY(-8px) rotate(.5deg);
+            box-shadow: var(--sh-md)
+        }
+
+        .testi-stars {
+            color: var(--sun);
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 14px
+        }
+
+        .testi-q {
+            font-size: .94rem;
+            line-height: 1.75;
+            margin-bottom: 20px;
+            opacity: .84;
+            min-height: 88px;
+            position: relative;
+            z-index: 1
+        }
+
+        .testi-person {
+            display: flex;
+            align-items: center;
+            gap: 14px
+        }
+
+        .testi-av {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white);
+            flex-shrink: 0
+        }
+
+        .testi-name {
+            font-weight: 700;
+            font-size: .9rem
+        }
+
+        .testi-detail {
+            font-size: .77rem;
+            opacity: .6;
+            margin-top: 2px
+        }
+
+        /* PRICING */
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            align-items: start
+        }
+
+        .price-card {
+            border-radius: 28px;
+            padding: 38px 30px;
+            display: flex;
+            flex-direction: column;
+            transition: transform .4s var(--ease-b), box-shadow .4s ease
+        }
+
+        .price-card.base {
+            background: var(--n700);
+            border: 1px solid rgba(255, 255, 255, .07)
+        }
+
+        .price-card.base:hover {
+            transform: translateY(-8px)
+        }
+
+        .price-card.pop {
+            background: linear-gradient(150deg, var(--coral) 0%, #FF8B72 100%);
+            transform: scale(1.05);
+            box-shadow: 0 24px 60px -14px rgba(255, 111, 89, .55);
+            position: relative;
+            overflow: visible
+        }
+
+        .price-card.pop::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 31px;
+            background: linear-gradient(135deg, var(--sun), var(--coral), var(--mint));
+            z-index: -1;
+            animation: gradient 4s linear infinite;
+            background-size: 200%
+        }
+
+        .price-card.pop:hover {
+            transform: scale(1.05) translateY(-8px)
+        }
+
+        .price-card.prem {
+            background: var(--n700);
+            border: 1px solid rgba(255, 255, 255, .07)
+        }
+
+        .price-card.prem:hover {
+            transform: translateY(-8px)
+        }
+
+        .price-eyb {
+            font-family: 'Caveat', cursive;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--sun);
+            margin-bottom: 6px;
+            display: block
+        }
+
+        .price-card.pop .price-eyb {
+            color: var(--n900)
+        }
+
+        .price-name {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 8px
+        }
+
+        .price-card.pop .price-name {
+            color: var(--n900)
+        }
+
+        .price-amt {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 2.3rem;
+            color: var(--white);
+            margin: 12px 0 22px;
+            font-weight: 700
+        }
+
+        .price-card.pop .price-amt {
+            color: var(--n900)
+        }
+
+        .price-amt small {
+            font-size: .9rem;
+            font-weight: 400;
+            opacity: .7
+        }
+
+        .price-list {
+            flex: 1;
+            margin-bottom: 26px
+        }
+
+        .price-list li {
+            display: flex;
+            gap: 11px;
+            margin-bottom: 13px;
+            font-size: .9rem;
+            color: var(--muted);
+            align-items: flex-start
+        }
+
+        .price-card.pop .price-list li {
+            color: rgba(14, 22, 64, .85)
+        }
+
+        .pcheck {
+            font-size: 1.1rem;
+            flex-shrink: 0
+        }
+
+        .price-foot {
+            font-size: .82rem;
+            opacity: .5;
+            text-align: center;
+            margin-top: 16px
+        }
+
+        /* CTA BANNER */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--n900), var(--n700));
+            border-radius: 32px;
+            padding: 72px 56px;
+            text-align: center;
+            overflow: hidden;
+            position: relative
+        }
+
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='22' cy='44' r='7' fill='none' stroke='rgba(255,255,255,.03)' stroke-width='2'/%3E%3Cline x1='29' y1='44' x2='29' y2='12' stroke='rgba(255,255,255,.03)' stroke-width='2'/%3E%3Cpath d='M29 12 L43 8 L43 18 L29 22Z' fill='rgba(255,255,255,.03)'/%3E%3C/svg%3E");
+            pointer-events: none
+        }
+
+        .cta-banner h2 {
+            color: var(--white);
+            font-size: clamp(1.9rem, 3.5vw, 2.9rem);
+            margin-bottom: 16px
+        }
+
+        .cta-banner p {
+            color: var(--muted);
+            max-width: 510px;
+            margin: 0 auto 36px;
+            font-size: 1.04rem;
+            line-height: 1.7
+        }
+
+        .cta-row {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        .cta-floats span {
+            position: absolute;
+            font-size: 2rem;
+            opacity: .22;
+            pointer-events: none;
+            animation: float var(--dur, 4s) ease-in-out var(--dl, 0s) infinite
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--n950);
+            color: var(--muted);
+            padding: 72px 0 32px
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 44px;
+            margin-bottom: 52px
+        }
+
+        .footer-brand p {
+            margin-top: 16px;
+            font-size: .9rem;
+            max-width: 280px;
+            line-height: 1.75;
+            opacity: .8
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 12px;
+            margin-top: 22px
+        }
+
+        .f-soc {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, .07);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .3s var(--ease-b);
+            color: var(--muted)
+        }
+
+        .f-soc:hover {
+            background: var(--sun);
+            color: var(--n900);
+            transform: translateY(-4px) rotate(-6deg)
+        }
+
+        .f-soc svg {
+            width: 18px;
+            height: 18px
+        }
+
+        .footer-col h4 {
+            font-family: 'Fredoka', sans-serif;
+            color: var(--white);
+            font-size: 1.05rem;
+            margin-bottom: 18px
+        }
+
+        .footer-col li {
+            margin-bottom: 12px
+        }
+
+        .footer-col a {
+            font-size: .9rem;
+            transition: color .2s
+        }
+
+        .footer-col a:hover {
+            color: var(--white)
+        }
+
+        .footer-contact li {
+            display: flex;
+            gap: 12px;
+            font-size: .88rem;
+            align-items: flex-start;
+            margin-bottom: 14px
+        }
+
+        .footer-contact svg {
+            width: 18px;
+            height: 18px;
+            color: var(--sun);
+            flex-shrink: 0;
+            margin-top: 2px
+        }
+
+        .footer-btm {
+            border-top: 1px solid rgba(255, 255, 255, .07);
+            padding-top: 26px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: .82rem;
+            opacity: .5
+        }
+
+        /* SCROLL TOP */
+        .scroll-top {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 100;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--sun);
+            color: var(--n900);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--sh-md);
+            transition: all .3s var(--ease-b);
+            opacity: 0;
+            pointer-events: none;
+            font-size: 1.3rem
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+            pointer-events: all
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-4px) scale(1.1)
+        }
+
+        /* WAVE DIVIDERS */
+        .w-wrap {
+            position: relative;
+            line-height: 0
+        }
+
+        .w-div {
+            width: 100%;
+            height: 80px;
+            display: block
+        }
+
+        .wn {
+            position: absolute;
+            z-index: 1;
+            font-size: 1.6rem;
+            animation: float2 var(--dur, 3.5s) ease-in-out var(--dl, 0s) infinite
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:1100px) {
+            .prog-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .price-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto
+            }
+
+            .price-card.pop {
+                transform: none
+            }
+
+            .price-card.pop:hover {
+                transform: translateY(-8px)
+            }
+
+            .teacher-wrap {
+                grid-template-columns: 1fr;
+                gap: 44px
+            }
+
+            .teacher-photo-col {
+                order: -1
+            }
+
+            .teacher-frame {
+                width: 280px;
+                height: 350px
+            }
+
+            .t-ring.r1 {
+                width: 340px;
+                height: 340px
+            }
+
+            .t-ring.r2 {
+                width: 290px;
+                height: 290px
+            }
+
+            .t-facts {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .testi-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px
+            }
+
+            .about-art {
+                max-width: 440px;
+                margin: 0 auto;
+                order: -1
+            }
+        }
+
+        @media(max-width:860px) {
+
+            .nav-links,
+            .nav-end {
+                display: none
+            }
+
+            .hbg {
+                display: flex
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr
+            }
+
+            .hero-art {
+                height: 340px;
+                order: -1
+            }
+
+            .hero {
+                padding-top: 145px;
+                padding-bottom: 80px
+            }
+
+            .hero h1 {
+                font-size: clamp(2.4rem, 8vw, 3.4rem)
+            }
+        }
+
+        @media(max-width:680px) {
+            .section {
+                padding: 68px 0 62px
+            }
+
+            .prog-grid {
+                grid-template-columns: 1fr
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr
+            }
+
+            .testi-grid {
+                grid-template-columns: 1fr
+            }
+
+            .t-facts {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 28px
+            }
+
+            .cta-banner {
+                padding: 48px 24px
+            }
+
+            .hero-actions {
+                gap: 10px
+            }
+
+            .hero-actions .btn {
+                flex: 1;
+                min-width: 0
+            }
+
+            .cta-row .btn {
+                flex: 1;
+                min-width: 200px
+            }
+        }
+
+        @media(max-width:480px) {
+            .stats-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .hero-trust {
+                gap: 20px
+            }
+
+            .t-facts {
+                grid-template-columns: 1fr
+            }
+
+            .teacher-frame {
+                width: 240px;
+                height: 300px
+            }
+
+            .t-ring.r1 {
+                width: 290px;
+                height: 290px
+            }
+
+            .t-ring.r2 {
+                width: 245px;
+                height: 245px
+            }
+
+            .footer-btm {
+                flex-direction: column;
+                text-align: center
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .001ms !important
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#top" class="logo">
+                <div class="logo-badge">
+                    <img src="images/norvenc.png" alt="">
+                </div>
+                <span class="logo-text">Norven <em>Course</em></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#program">Program</a></li>
+                <li><a href="#pengajar">Pengajar</a></li>
+                <li><a href="#testimoni">Testimoni</a></li>
+                <li><a href="#paket">Paket</a></li>
+            </ul>
+            <div class="nav-end">
+                <a href="" class="btn btn-sun btn-shine">🎵 Daftar Sekarang</a>
+            </div>
+            <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+        <div class="mob-menu" id="mobMenu">
+            <a href="#tentang">Tentang Kami</a>
+            <a href="#program">Program</a>
+            <a href="#pengajar">Pengajar</a>
+            <a href="#testimoni">Testimoni</a>
+            <a href="#paket">Paket Harga</a>
+            <a href="" class="btn btn-sun">🎵 Daftar Sekarang</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero" id="top">
+        <canvas id="heroCanvas"></canvas>
+        <div class="hero-blob b1"></div>
+        <div class="hero-blob b2"></div>
+        <div class="hero-blob b3"></div>
+
+        <div class="container hero-grid">
+            <div>
+                <span class="hero-label"><span class="hero-pulse"></span>Les musik paling asik se-Blora Raya ✦</span>
+                <h1>Main Musik Itu <span class="wob">🎸</span><br><span class="grad">Seru Banget</span>,<br>Bukan Serem!
+                </h1>
+                <p class="hero-sub">Di Norven Course, siapa pun—dari anak TK sampai om-om kantoran—bisa belajar piano,
+                    gitar, vokal, drum, biola, dan ukulele dengan cara yang santai, sabar, dan penuh tawa.</p>
+                <div class="hero-actions">
+                    <a href="" class="btn btn-sun btn-lg btn-shine">Coba Kelas Gratis 🎉</a>
+                    <a href="#program" class="btn btn-outline-w btn-lg">Lihat Program</a>
+                </div>
+                <div class="hero-trust">
+                    <div><span class="trust-num" data-target="10" data-plus="+">10+</span><span class="trust-lbl">Murid
+                            Ceria</span></div>
+                    <div><span class="trust-num" data-target="7" data-suffix="+ Thn">7+ Thn</span><span
+                            class="trust-lbl">Pengalaman</span></div>
+                    <div><span class="trust-num" data-target="98" data-suffix="%">98%</span><span
+                            class="trust-lbl">Murid Naik Level</span></div>
+                    <div><span class="trust-num" data-target="6">6</span><span class="trust-lbl">Instrumen</span></div>
+                </div>
+            </div>
+            <div class="hero-art">
+                <div class="hero-rings">
+                    <svg class="ring-svg" width="440" height="440" viewBox="0 0 440 440" aria-hidden="true">
+                        <circle cx="220" cy="220" r="180" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1.5"
+                            stroke-dasharray="4 12" />
+                    </svg>
+                    <svg class="ring-svg r2" style="position:absolute;" width="340" height="340" viewBox="0 0 340 340"
+                        aria-hidden="true">
+                        <circle cx="170" cy="170" r="140" fill="none" stroke="rgba(84,225,194,.12)" stroke-width="1.5"
+                            stroke-dasharray="2 8" />
+                    </svg>
+                </div>
+                <div class="hero-center">
+                    <div class="hero-center-inner">🎵</div>
+                </div>
+                <div class="h-icon i1">🎹</div>
+                <div class="h-icon i2">🎸</div>
+                <div class="h-icon i3">🥁</div>
+                <div class="h-icon i4">🎻</div>
+                <div class="h-icon i5">🎤</div>
+                <div class="h-icon i6">🪗</div>
+                <div class="spark" style="top:20%;left:18%;--dl:.5s;font-size:1.2rem;">✨</div>
+                <div class="spark" style="top:70%;right:22%;--dl:1s;font-size:1rem;">⭐</div>
+                <div class="spark" style="top:40%;left:12%;--dl:1.5s;font-size:.9rem;">✦</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MARQUEE -->
+    <div class="marquee-band" aria-hidden="true">
+        <div class="marquee-track">
+            <div class="marquee-item">🎹 Piano <span class="marquee-dot"></span></div>
+            <div class="marquee-item">🎸 Gitar <span class="marquee-dot"></span></div>
+            <div class="marquee-item">🎤 Vokal <span class="marquee-dot"></span></div>
+            <div class="marquee-item">🥁 Drum <span class="marquee-dot"></span></div>
+            <div class="marquee-item">🎻 Biola <span class="marquee-dot"></span></div>
+            <div class="marquee-item">🪗 Ukulele <span class="marquee-dot"></span></div>
+            <div class="marquee-item">🎵 Belajar Musik Itu Seru! <span class="marquee-dot"></span></div>
+            <div class="marquee-item">🎹 Piano <span class="marquee-dot"></span></div>
+            <div class="marquee-item">🎸 Gitar <span class="marquee-dot"></span></div>
+            <div class="marquee-item">🎤 Vokal <span class="marquee-dot"></span></div>
+            <div class="marquee-item">🥁 Drum <span class="marquee-dot"></span></div>
+            <div class="marquee-item">🎻 Biola <span class="marquee-dot"></span></div>
+            <div class="marquee-item">🪗 Ukulele <span class="marquee-dot"></span></div>
+            <div class="marquee-item">🎵 Belajar Musik Itu Seru! <span class="marquee-dot"></span></div>
+        </div>
+    </div>
+
+    <!-- STATS -->
+    <section class="stats-strip" aria-label="Statistik">
+        <div class="container stats-grid">
+            <div class="rv" style="--dl:0ms"><span class="stat-icon" style="--dl:0s">🎵</span><span class="stat-num"
+                    data-target="10" data-plus="+">0</span><span class="stat-lbl">Murid bahagia & tetap semangat</span>
+            </div>
+            <div class="rv" style="--dl:120ms"><span class="stat-icon" style="--dl:.4s">🏆</span><span class="stat-num"
+                    data-target="7" data-suffix="+">0</span><span class="stat-lbl">Tahun menemani perjalanan
+                    musik</span></div>
+            <div class="rv" style="--dl:240ms"><span class="stat-icon" style="--dl:.8s">💚</span><span class="stat-num"
+                    data-target="98" data-suffix="%">0</span><span class="stat-lbl">Murid naik level tiap
+                    semester</span></div>
+            <div class="rv" style="--dl:360ms"><span class="stat-icon" style="--dl:1.2s">⭐</span><span class="stat-num"
+                    data-target="6">0</span><span class="stat-lbl">Pilihan instrumen seru</span></div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section sec-cream" id="tentang">
+        <div class="container about-grid">
+            <div class="rv-l about-text">
+                <span class="eyebrow" style="color:var(--coral)">✦ Cerita kami</span>
+                <h2 class="sec-title">Kenalan Sama<br>Norven Course 👋</h2>
+                <p>Norven Course lahir dari obrolan dua musisi yang capek lihat les musik dianggap "serius dan
+                    menegangkan". Padahal musik itu soal rasa senang dulu, baru teknik!</p>
+                <p>Sejak 2026, kami bikin studio yang penuh warna, pengajar yang sabar dan suka becanda, dan kurikulum
+                    yang bikin murid nggak sadar kalau lagi belajar teori—soalnya keasyikan main.</p>
+                <p>Sekarang Norven Course sudah ditemukan oleh ratusan keluarga di Blora Raya—dari anak usia 5 tahun
+                    sampai om-om yang baru mau mulai belajar gitar akustik.</p>
+                <div class="about-fact">
+                    <span class="fact-icon">🎂</span>
+                    <div class="fact-text"><strong>Fun fact!</strong>Murid tertua kami 67 tahun dan baru mulai belajar
+                        piano—dan sekarang sudah bisa mainin lagu favoritnya! Tidak ada kata terlambat. 🎉</div>
+                </div>
+            </div>
+            <div class="rv-r about-art">
+                <div class="about-art-frame">
+                    <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&h=600&fit=crop&q=80"
+                        alt="Studio Norven Course"
+                        onerror="this.parentElement.style.background='var(--n800)';this.style.display='none'" />
+                </div>
+                <div class="a-sticker s1">🎵 Belajar sambil ketawa</div>
+                <div class="a-sticker s2">⭐ Studio penuh warna</div>
+                <div class="a-sticker s3">💯 Dijamin seru</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WAVE navy bg -->
+    <div class="w-wrap" style="background:var(--cream)">
+        <svg class="w-div" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+            <path
+                d="M0,40 C120,8 240,72 360,40 C480,8 600,72 720,40 C840,8 960,72 1080,40 C1200,8 1320,72 1440,40 L1440,80 L0,80 Z"
+                fill="#161E54" />
+        </svg>
+        <span class="wn" style="left:20%;top:4px;--dl:0s;--dur:3s">🎵</span>
+        <span class="wn" style="left:52%;top:-4px;--dl:.5s;--dur:4s">🎶</span>
+        <span class="wn" style="left:80%;top:6px;--dl:1s;--dur:3.5s">🎵</span>
+    </div>
+
+    <!-- PROGRAMS -->
+    <section class="section sec-navy" id="program">
+        <div class="container">
+            <div class="sec-head center rv">
+                <span class="eyebrow" style="color:var(--mint)">✦ Ada 6 jalur seru</span>
+                <h2 class="sec-title">Pilih Petualangan Musikmu! 🗺️</h2>
+                <p class="sec-sub">Dari nol sampai jago, ada kelas yang pas buat kamu—atau si kecil di rumah.</p>
+            </div>
+            <div class="prog-grid">
+
+                <!-- Piano -->
+                <div class="prog-card rv" style="--dl:0ms">
+                    <div class="prog-img">
+                        <img src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=600&h=400&fit=crop&q=80"
+                            alt="Piano" loading="lazy" onerror="this.style.display='none'" />
+                        <div class="prog-img-overlay"></div>
+                        <div class="prog-emoji">🎹</div>
+                        <div class="prog-img-fallback">🎹</div>
+                    </div>
+                    <div class="prog-body">
+                        <h3>Piano</h3>
+                        <p>Mulai dari kenal not balok sampai mainin lagu favorit—jarinya makin lincah tiap minggu!</p>
+                        <div class="prog-footer">
+                            <span class="prog-tag">Usia 5+ · Privat / Grup</span>
+                            <span class="prog-color" style="background:var(--sun)"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guitar -->
+                <div class="prog-card rv" style="--dl:80ms">
+                    <div class="prog-img">
+                        <img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=600&h=400&fit=crop&q=80"
+                            alt="Gitar" loading="lazy" onerror="this.style.display='none'" />
+                        <div class="prog-img-overlay"></div>
+                        <div class="prog-emoji">🎸</div>
+                        <div class="prog-img-fallback">🎸</div>
+                    </div>
+                    <div class="prog-body">
+                        <h3>Gitar</h3>
+                        <p>Akustik atau elektrik, dari kunci dasar sampai jago nge-riff lagu kesukaanmu tanpa batas!</p>
+                        <div class="prog-footer">
+                            <span class="prog-tag">Usia 7+ · Privat / Grup</span>
+                            <span class="prog-color" style="background:var(--coral)"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocals -->
+                <div class="prog-card rv" style="--dl:160ms">
+                    <div class="prog-img">
+                        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=600&h=400&fit=crop&q=80"
+                            alt="Vokal" loading="lazy" onerror="this.style.display='none'" />
+                        <div class="prog-img-overlay"></div>
+                        <div class="prog-emoji">🎤</div>
+                        <div class="prog-img-fallback">🎤</div>
+                    </div>
+                    <div class="prog-body">
+                        <h3>Vokal</h3>
+                        <p>Teknik napas, pitch control, sampai berani tampil di depan panggung dengan percaya diri
+                            penuh.</p>
+                        <div class="prog-footer">
+                            <span class="prog-tag">Usia 6+ · Privat / Grup</span>
+                            <span class="prog-color" style="background:var(--mint)"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drums -->
+                <div class="prog-card rv" style="--dl:240ms">
+                    <div class="prog-img">
+                        <img src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=600&h=400&fit=crop&q=80"
+                            alt="Drum" loading="lazy" onerror="this.style.display='none'" />
+                        <div class="prog-img-overlay"></div>
+                        <div class="prog-emoji">🥁</div>
+                        <div class="prog-img-fallback">🥁</div>
+                    </div>
+                    <div class="prog-body">
+                        <h3>Drum</h3>
+                        <p>Salurin energi lewat ketukan—belajar ritme, koordinasi, sampai main bareng full band!</p>
+                        <div class="prog-footer">
+                            <span class="prog-tag">Usia 6+ · Privat</span>
+                            <span class="prog-color" style="background:var(--sun)"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Violin -->
+                <div class="prog-card rv" style="--dl:320ms">
+                    <div class="prog-img">
+                        <img src="https://images.unsplash.com/photo-1612225330812-01a90087040e?w=600&h=400&fit=crop&q=80"
+                            alt="Biola" loading="lazy" onerror="this.style.display='none'" />
+                        <div class="prog-img-overlay"></div>
+                        <div class="prog-emoji">🎻</div>
+                        <div class="prog-img-fallback">🎻</div>
+                    </div>
+                    <div class="prog-body">
+                        <h3>Biola</h3>
+                        <p>Suara elegan dimulai dari postur dan bow yang benar, lanjut ke melodi-melodi indah memukau.
+                        </p>
+                        <div class="prog-footer">
+                            <span class="prog-tag">Usia 6+ · Privat</span>
+                            <span class="prog-color" style="background:var(--coral)"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ukulele -->
+                <div class="prog-card rv" style="--dl:400ms">
+                    <div class="prog-img">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop&q=80"
+                            alt="Ukulele" loading="lazy" onerror="this.style.display='none'" />
+                        <div class="prog-img-overlay"></div>
+                        <div class="prog-emoji">🪗</div>
+                        <div class="prog-img-fallback">🪗</div>
+                    </div>
+                    <div class="prog-body">
+                        <h3>Ukulele</h3>
+                        <p>Kecil, ringan, dan gampang dibawa ke mana-mana. Cocok buat pemula yang mau cepat bisa!</p>
+                        <div class="prog-footer">
+                            <span class="prog-tag">Usia 5+ · Privat / Grup</span>
+                            <span class="prog-color" style="background:var(--mint)"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WAVE cream -->
+    <div class="w-wrap" style="background:var(--n800)">
+        <svg class="w-div" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+            <path
+                d="M0,40 C120,8 240,72 360,40 C480,8 600,72 720,40 C840,8 960,72 1080,40 C1200,8 1320,72 1440,40 L1440,80 L0,80 Z"
+                fill="#FFF8EC" />
+        </svg>
+    </div>
+
+    <!-- WHY US -->
+    <section class="section sec-cream">
+        <div class="container">
+            <div class="sec-head center rv">
+                <span class="eyebrow" style="color:var(--coral)">✦ Alasan murid betah</span>
+                <h2 class="sec-title">Kenapa Belajar di Norven Course? 🤔</h2>
+                <p class="sec-sub">Bukan cuma soal teknik—kami pastikan tiap sesi les jadi momen yang ditunggu-tunggu!
+                </p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card wc1 rv" style="--dl:0ms">
+                    <div class="why-icon" style="background:#FFF3CC">❤️</div>
+                    <h3>Pengajar Penyabar & Asyik</h3>
+                    <p>Bersertifikat dan jago bikin suasana belajar santai—nggak galak walau muridnya lupa PR minggu
+                        lalu!</p>
+                </div>
+                <div class="why-card wc2 rv" style="--dl:100ms">
+                    <div class="why-icon" style="background:#D5F5EC">📚</div>
+                    <h3>Kurikulum Fun & Terstruktur</h3>
+                    <p>Belajar teori sambil main lagu, dengan progress yang jelas dan kelihatan berkembang tiap bulan.
+                    </p>
+                </div>
+                <div class="why-card wc3 rv" style="--dl:200ms">
+                    <div class="why-icon" style="background:#FFE8E4">🕐</div>
+                    <h3>Jadwal Super Fleksibel</h3>
+                    <p>Pilih sendiri jam les yang pas sama kesibukan sekolah, kerja, atau bahkan jadwal tidur siangmu.
+                    </p>
+                </div>
+                <div class="why-card wc4 rv" style="--dl:300ms">
+                    <div class="why-icon" style="background:#EDE8FF">🎪</div>
+                    <h3>Recital Tahunan Keren</h3>
+                    <p>Unjuk gigi di panggung sungguhan tiap tahun, lengkap dengan tata cahaya dan tepuk tangan meriah!
+                    </p>
+                </div>
+                <div class="why-card wc5 rv" style="--dl:400ms">
+                    <div class="why-icon" style="background:#FFF3CC">🎨</div>
+                    <h3>Studio Nyaman & Estetik</h3>
+                    <p>Ruang kedap suara, alat musik lengkap, dan dekorasi yang asyik—pasti pengen foto-foto juga!</p>
+                </div>
+                <div class="why-card wc6 rv" style="--dl:500ms">
+                    <div class="why-icon" style="background:#D5F5EC">✅</div>
+                    <h3>Trial Class Gratis!</h3>
+                    <p>Coba dulu satu sesi sebelum mendaftar—tanpa paksaan, tanpa tekanan, tanpa ribet sama sekali.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WAVE deep -->
+    <div class="w-wrap" style="background:var(--cream)">
+        <svg class="w-div" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+            <path
+                d="M0,40 C120,8 240,72 360,40 C480,8 600,72 720,40 C840,8 960,72 1080,40 C1200,8 1320,72 1440,40 L1440,80 L0,80 Z"
+                fill="#161E54" />
+        </svg>
+    </div>
+
+    <!-- TEACHER -->
+    <section class="section sec-navy" id="pengajar">
+        <div class="container">
+            <div class="sec-head center rv">
+                <span class="eyebrow" style="color:var(--sun)">✦ Pendiri & Head Instructor</span>
+                <h2 class="sec-title">Kenalan Sama Pengajarmu! 🎸</h2>
+            </div>
+            <div class="teacher-wrap">
+                <div class="teacher-photo-col rv-l">
+                    <div class="t-ring r1"></div>
+                    <div class="t-ring r2"></div>
+                    <div class="teacher-frame">
+                        <img src="images/nyudha.webp" alt="Kak Yudha - Head Instructor"
+                            onerror="this.parentElement.style.background='var(--n700)';this.style.display='none'" />
+                    </div>
+                    <div class="t-stick ts1">🎵 7+ Thn Ngajar</div>
+                    <div class="t-stick ts2">🏆 Bersertifikat</div>
+                    <div class="t-stick ts3">❤️ 10+ Murid</div>
+                </div>
+                <div class="teacher-info rv-r">
+                    <span class="eyebrow">✦ Head Instructor & Founder</span>
+                    <h2>Kak Narendra Yudha Pratama 🎸</h2>
+                    <div class="t-role">🎓 Lulusan UNNES Semarang · 7+ Tahun Mengajar</div>
+                    <p class="teacher-bio">Kak Yudha adalah musisi sekaligus pendiri Norven Course yang percaya bahwa
+                        semua
+                        orang—benar-benar semua orang—bisa belajar musik asal ada guru yang tepat. Dengan pengalaman
+                        lebih dari 10 tahun mengajar dari anak-anak hingga orang dewasa, Kak Yudha dikenal dengan
+                        pendekatannya yang sabar, lucu, dan selalu bisa bikin murid ketawa sambil belajar.</p>
+                    <p class="teacher-bio" style="margin-bottom:0">Kak Yudha adalah musisi multi-instrumen yang aktif
+                        tampil di berbagai venue Jawa Tengah, dan misi utamanya cuma satu: bikin kamu jatuh cinta dengan
+                        musik.</p>
+                    <div class="t-instr">
+                        <span class="t-chip"><span class="ic">🎸</span> Gitar</span>
+                        <span class="t-chip"><span class="ic">🪗</span> Ukulele</span>
+                        <span class="t-chip"><span class="ic">🎹</span> Piano</span>
+                        <span class="t-chip"><span class="ic">🎸</span> Bass</span>
+                    </div>
+                    <div class="t-facts">
+                        <div class="fact-card">
+                            <div class="ico">🏫</div>
+                            <div class="txt"><strong>Pendidikan</strong>UNNES Semarang — Seni Musik Pertunjukan</div>
+                        </div>
+                        <div class="fact-card">
+                            <div class="ico">👥</div>
+                            <div class="txt"><strong>Murid Diajar</strong>Lebih dari 10 murid berbagai usia</div>
+                        </div>
+                        <div class="fact-card">
+                            <div class="ico">🎪</div>
+                            <div class="txt"><strong>Penampilan</strong>17+ konser & festival musik</div>
+                        </div>
+                        <div class="fact-card">
+                            <div class="ico">🎯</div>
+                            <div class="txt"><strong>Spesialisasi</strong>Pemula & anak-anak yang penakut!</div>
+                        </div>
+                    </div>
+                    <div class="t-quote">
+                        "Musiknya nggak harus sempurna dulu baru boleh dinikmati. Yang penting jarinya bergerak dan
+                        hatinya senang—sisanya biar waktu yang urus!"
+                        <cite>— Kak Narendra Yudha, Founder Norven Course</cite>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WAVE cream -->
+    <div class="w-wrap" style="background:var(--n800)">
+        <svg class="w-div" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+            <path
+                d="M0,40 C120,8 240,72 360,40 C480,8 600,72 720,40 C840,8 960,72 1080,40 C1200,8 1320,72 1440,40 L1440,80 L0,80 Z"
+                fill="#FFF8EC" />
+        </svg>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <section class="section sec-cream" id="testimoni">
+        <div class="container">
+            <div class="sec-head rv">
+                <span class="eyebrow" style="color:var(--coral)">✦ Kata mereka</span>
+                <h2 class="sec-title">Cerita dari Keluarga<br>Norven Course 💬</h2>
+            </div>
+            <div class="testi-grid">
+                <div class="testi-card rv" style="--dl:0ms">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-q">"Awalnya saya kira anak saya bakal bosan ikut les, eh malah dia yang nungguin
+                        hari Sabtu buat ke studio. Kak Yudha emang beda!"</p>
+                    <div class="testi-person">
+                        <div class="testi-av" style="background:var(--coral)">R</div>
+                        <div>
+                            <div class="testi-name">Bu Rina Kusuma</div>
+                            <div class="testi-detail">Orang tua Kayla, 8 thn · Piano</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card rv" style="--dl:120ms">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-q">"Bima sebelumnya gak bisa diem, eh di sini dia belajar drum dan jadi lebih fokus.
+                        Kak Yudha sabar banget ngajarin!"</p>
+                    <div class="testi-person">
+                        <div class="testi-av" style="background:var(--mint)">A</div>
+                        <div>
+                            <div class="testi-name">Pak Andre Wibowo</div>
+                            <div class="testi-detail">Orang tua Bima, 10 thn · Drum</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card rv" style="--dl:240ms">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-q">"Suaraku jadi lebih percaya diri buat nyanyi di depan kelas. Latihannya seru,
+                        nggak kaku. Kak Yudha pinter banget bikin rileks!"</p>
+                    <div class="testi-person">
+                        <div class="testi-av" style="background:var(--sun)">C</div>
+                        <div>
+                            <div class="testi-name">Citra Dewi</div>
+                            <div class="testi-detail">Murid Vokal & Ukulele, 16 thn</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card rv" style="--dl:360ms">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-q">"Anak kembarku akhirnya punya kegiatan bareng yang mereka berdua suka. Recital
+                        tahun lalu bikin kami semua nangis terharu!"</p>
+                    <div class="testi-person">
+                        <div class="testi-av" style="background:var(--violet)">M</div>
+                        <div>
+                            <div class="testi-name">Bu Maya Santoso</div>
+                            <div class="testi-detail">Orang tua Vio & Vino · Biola & Gitar</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card rv" style="--dl:480ms">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-q">"Belajar gitar di umur 30-an ternyata nggak semenakutkan itu. Suasananya santai
+                        banget, Kak Yudha selalu bisa bikin mood jadi bagus!"</p>
+                    <div class="testi-person">
+                        <div class="testi-av" style="background:var(--coral)">F</div>
+                        <div>
+                            <div class="testi-name">Fajar Nugroho</div>
+                            <div class="testi-detail">Murid Gitar Dewasa</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card rv" style="--dl:600ms">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-q">"Umur 67 tapi belajar piano dari nol. Kak Yudha bilang nggak ada kata
+                        terlambat—dan dia buktiin itu dengan caranya ngajar yang seru!"</p>
+                    <div class="testi-person">
+                        <div class="testi-av" style="background:var(--mint)">S</div>
+                        <div>
+                            <div class="testi-name">Pak Soetopo</div>
+                            <div class="testi-detail">Murid Piano, 67 thn · Murid Tertua! 🎉</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WAVE navy -->
+    <div class="w-wrap" style="background:var(--cream)">
+        <svg class="w-div" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+            <path
+                d="M0,40 C120,8 240,72 360,40 C480,8 600,72 720,40 C840,8 960,72 1080,40 C1200,8 1320,72 1440,40 L1440,80 L0,80 Z"
+                fill="#0E1640" />
+        </svg>
+    </div>
+
+    <!-- PRICING -->
+    <section class="section sec-deep" id="paket">
+        <div class="container">
+            <div class="sec-head center rv">
+                <span class="eyebrow" style="color:var(--mint)">✦ Investasi seru</span>
+                <h2 class="sec-title">Pilih Paket yang Pas! 🎯</h2>
+                <p class="sec-sub">Mulai dari coba-coba gratis sampai belajar intensif privat satu-satu sama Kak Yudha.
+                </p>
+            </div>
+            <div class="price-grid">
+                <div class="price-card base rv" style="--dl:0ms">
+                    <span class="price-eyb">✨ buat kenalan dulu</span>
+                    <div class="price-name">Trial Class</div>
+                    <div class="price-amt">Gratis <small>/ 1x sesi</small></div>
+                    <ul class="price-list">
+                        <li><span class="pcheck">🎵</span> 1x pertemuan 45 menit</li>
+                        <li><span class="pcheck">🎵</span> Kenalan instrumen pilihanmu</li>
+                        <li><span class="pcheck">🎵</span> Ketemu Kak Yudha langsung</li>
+                        <li><span class="pcheck">🎵</span> Tanpa komitmen apapun</li>
+                        <li><span class="pcheck">🎵</span> Langsung bisa bawa pulang nada!</li>
+                    </ul>
+                    <a href="" class="btn btn-outline-w">Coba Gratis Sekarang</a>
+                </div>
+                <div class="price-card pop rv" style="--dl:150ms">
+                    <span class="price-eyb">🔥 paling laris banget</span>
+                    <div class="price-name">Reguler Grup</div>
+                    <div class="price-amt">Rp350rb <small>/bulan</small></div>
+                    <ul class="price-list">
+                        <li><span class="pcheck">✅</span> 4x pertemuan (1x/minggu)</li>
+                        <li><span class="pcheck">✅</span> Kelas grup kecil (3–4 murid)</li>
+                        <li><span class="pcheck">✅</span> Laporan progress bulanan</li>
+                        <li><span class="pcheck">✅</span> Akses recital tahunan</li>
+                        <li><span class="pcheck">✅</span> Belajar lebih seru bareng teman!</li>
+                    </ul>
+                    <a href="" class="btn btn-sun btn-shine">Daftar Sekarang! 🎉</a>
+                </div>
+                <div class="price-card prem rv" style="--dl:300ms">
+                    <span class="price-eyb">🚀 belajar lebih cepat</span>
+                    <div class="price-name">Privat Intensif</div>
+                    <div class="price-amt">Rp650rb <small>/bulan</small></div>
+                    <ul class="price-list">
+                        <li><span class="pcheck">🎯</span> 8x pertemuan (2x/minggu)</li>
+                        <li><span class="pcheck">🎯</span> One-on-one sama Kak Yudha</li>
+                        <li><span class="pcheck">🎯</span> Kurikulum personal untukmu</li>
+                        <li><span class="pcheck">🎯</span> Prioritas jadwal & studio</li>
+                        <li><span class="pcheck">🎯</span> Progress 2x lebih cepat!</li>
+                    </ul>
+                    <a href="" class="btn btn-outline-w">Daftar Privat</a>
+                </div>
+            </div>
+            <p class="price-foot">*Harga dapat berubah sewaktu-waktu. Hubungi kami untuk info paket terbaru & diskon
+                keluarga.</p>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="section sec-cream" id="kontak">
+        <div class="container">
+            <div class="cta-banner rv">
+                <div class="cta-floats">
+                    <span style="top:12%;left:6%;--dur:4s;--dl:0s;font-size:1.8rem">🎵</span>
+                    <span style="top:20%;right:8%;--dur:5s;--dl:.5s;font-size:1.4rem">🎶</span>
+                    <span style="bottom:18%;left:10%;--dur:3.5s;--dl:1s;font-size:1.6rem">⭐</span>
+                    <span style="bottom:22%;right:12%;--dur:4.5s;--dl:1.5s;font-size:1.2rem">✨</span>
+                    <span style="top:50%;left:3%;--dur:6s;--dl:.3s;font-size:1rem">🎸</span>
+                    <span style="top:48%;right:3%;--dur:5.5s;--dl:.8s;font-size:1rem">🎹</span>
+                </div>
+                <h2>Yuk, Mulai Petualangan Musikmu Hari Ini! 🚀</h2>
+                <p>Daftar trial class gratis dan rasakan sendiri serunya belajar musik di Norven Course. Nggak ada yang
+                    nyesel!</p>
+                <div class="cta-row">
+                    <a href="https://wa.me/6289648764982?text=Halo,%20saya%20ingin%20bertanya%20tentang%20Norven%20Course."
+                        target="_blank" class="btn btn-sun btn-lg btn-shine">
+                        💬 Chat via WhatsApp
+                    </a>
+                    <a href="" class="btn btn-outline-w btn-lg">
+                        📝 Isi Formulir Pendaftaran
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#top" class="logo" style="margin-bottom:4px">
+                        <div class="logo-badge">
+                            <img src="images/norvenc.png" alt="">
+                        </div>
+                        <span class="logo-text">Norven <em>Course</em></span>
+                    </a>
+                    <p>Tempat asyik belajar musik untuk semua umur—dari nol sampai jago, dengan cara yang seru dan penuh
+                        tawa. 🎵</p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/norvenmusic_/" target="_blank" class="f-soc"
+                            aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="5" />
+                                <circle cx="12" cy="12" r="4" />
+                                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+                            </svg>
+                        </a>
+                        <a href="#" class="f-soc" aria-label="TikTok">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M16 3c.4 2.2 2 3.8 4 4v3c-1.5 0-2.9-.4-4-1.2V14a5.5 5.5 0 1 1-5.5-5.5c.3 0 .7 0 1 .1v3.1a2.4 2.4 0 1 0 1.7 2.3V3z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="f-soc" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="6" width="20" height="12" rx="4" />
+                                <path d="M11 10l4 2-4 2z" fill="currentColor" stroke="none" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Jelajahi</h4>
+                    <ul>
+                        <li><a href="#tentang">Tentang Kami</a></li>
+                        <li><a href="#program">Program Kelas</a></li>
+                        <li><a href="#pengajar">Pengajar</a></li>
+                        <li><a href="#testimoni">Testimoni</a></li>
+                        <li><a href="#paket">Paket Harga</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Instrumen</h4>
+                    <ul>
+                        <li><a href="#program">🎹 Piano</a></li>
+                        <li><a href="#program">🎸 Gitar</a></li>
+                        <li><a href="#program">🎤 Vokal</a></li>
+                        <li><a href="#program">🥁 Drum</a></li>
+                        <li><a href="#program">🎻 Biola & Ukulele</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontak</h4>
+                    <ul class="footer-contact">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>Blora Indah Regency, Blok C-18</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 2.9a2 2 0 0 1-.4 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.5 2.9.6a2 2 0 0 1 1.7 2z" />
+                            </svg>0896-4876-4982</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="4" width="20" height="16" rx="3" />
+                                <path d="M2 7l10 6 10-6" />
+                            </svg>allya.nurmalinda@gmail.com</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M12 7v5l3 3" />
+                            </svg>Senin–Sabtu · 09.00–20.00 WIB</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-btm">
+                <span>© 2026 Norven Course · Dibuat dengan ❤️ dan banyak nada 🎵</span>
+                <span>Designed with Anzou in Surakarta 🇮🇩</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCROLL TOP -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll ke atas"
+        onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <script>
+        /* ===== NAVBAR ===== */
+        const nav = document.getElementById('nav');
+        const hbg = document.getElementById('hbg');
+        const mobMenu = document.getElementById('mobMenu');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 60);
+            document.getElementById('scrollTop').classList.toggle('show', window.scrollY > 400);
+        });
+        hbg.addEventListener('click', () => { hbg.classList.toggle('open'); mobMenu.classList.toggle('open') });
+        mobMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { hbg.classList.remove('open'); mobMenu.classList.remove('open') }));
+
+        /* ===== CANVAS PARTICLES ===== */
+        const canvas = document.getElementById('heroCanvas');
+        const ctx = canvas.getContext('2d');
+        const notes = ['♩', '♪', '♫', '♬', '♭', '♮', '♯'];
+        const cols = ['rgba(255,200,69,', 'rgba(255,111,89,', 'rgba(84,225,194,', 'rgba(156,136,255,'];
+        function resize() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight }
+        resize();
+        window.addEventListener('resize', resize);
+        const parts = Array.from({ length: 36 }, () => ({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            vy: -(0.35 + Math.random() * .75),
+            vx: (Math.random() - .5) * .28,
+            sz: 11 + Math.random() * 16,
+            op: .08 + Math.random() * .22,
+            note: notes[Math.floor(Math.random() * notes.length)],
+            col: cols[Math.floor(Math.random() * cols.length)]
+        }));
+        function anim() {
+            if (!canvas.width) return;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            parts.forEach(p => {
+                p.y += p.vy; p.x += p.vx;
+                if (p.y < -30) { p.y = canvas.height + 30; p.x = Math.random() * canvas.width }
+                ctx.save(); ctx.globalAlpha = p.op;
+                ctx.fillStyle = p.col + '.8)';
+                ctx.font = `${p.sz}px Arial`;
+                ctx.fillText(p.note, p.x, p.y);
+                ctx.restore();
+            });
+            requestAnimationFrame(anim);
+        }
+        if (!window.matchMedia('(prefers-reduced-motion:reduce)').matches) anim();
+
+        /* ===== SCROLL REVEAL ===== */
+        const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+        const revEls = document.querySelectorAll('.rv,.rv-l,.rv-r,.rv-s');
+        if ('IntersectionObserver' in window && !reduce) {
+            const obs = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        const d = e.target.style.getPropertyValue('--dl') || '0ms';
+                        setTimeout(() => e.target.classList.add('in'), parseInt(d) || 0);
+                        obs.unobserve(e.target);
+                    }
+                });
+            }, { threshold: .12 });
+            revEls.forEach(el => obs.observe(el));
+        } else revEls.forEach(el => el.classList.add('in'));
+
+        /* ===== COUNTER ANIMATION ===== */
+        function animCount(el, target) {
+            const dur = 1800; const start = performance.now();
+            const suf = el.dataset.suffix || ''; const plus = el.dataset.plus || '';
+            function tick(now) {
+                const p = Math.min((now - start) / dur, 1);
+                const e = 1 - Math.pow(1 - p, 3);
+                el.textContent = Math.round(target * e) + suf + (p < 1 ? '' : plus);
+                if (p < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        }
+        const counters = document.querySelectorAll('.stat-num[data-target]');
+        const cobs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { animCount(e.target, +e.target.dataset.target); cobs.unobserve(e.target) }
+            });
+        }, { threshold: .5 });
+        counters.forEach(c => cobs.observe(c));
+    </script>
+</body>
+
+</html>
