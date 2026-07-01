@@ -2099,6 +2099,87 @@
             }
         }
 
+        /* ===========================
+                MOBILE RESPONSIVE
+            =========================== */
+        @media (max-width: 768px) {
+        
+            .container{
+                padding: 0 20px;
+            }
+        
+            .hero{
+                padding:120px 0 70px;
+            }
+        
+            .hero-grid,
+            .about-grid,
+            .teacher-wrap,
+            .footer-grid{
+                grid-template-columns:1fr;
+                gap:35px;
+            }
+        
+            .hero-art{
+                height:300px;
+                order:-1;
+            }
+        
+            .hero-center{
+                width:150px;
+                height:150px;
+            }
+        
+            .hero-center-inner{
+                width:65px;
+                height:65px;
+                font-size:2rem;
+            }
+        
+            .hero-actions{
+                flex-direction:column;
+            }
+        
+            .hero-actions .btn,
+            .cta-row .btn{
+                width:100%;
+            }
+        
+            .prog-grid,
+            .why-grid,
+            .price-grid,
+            .testi-grid{
+                grid-template-columns:1fr;
+            }
+        
+            .stats-grid{
+                grid-template-columns:repeat(2,1fr);
+            }
+        
+            .t-facts{
+                grid-template-columns:1fr;
+            }
+        
+            .teacher-frame{
+                width:240px;
+                height:300px;
+            }
+        
+            .a-sticker,
+            .t-stick{
+                display:none;
+            }
+        
+            .hero h1{
+                font-size:2.2rem;
+            }
+        
+            .sec-title{
+                font-size:2rem;
+            }
+        
+        }
+
         @media(max-width:680px) {
             .section {
                 padding: 68px 0 62px
