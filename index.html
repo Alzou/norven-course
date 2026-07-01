@@ -42,41 +42,40 @@
         *::after {
             box-sizing: border-box;
             margin: 0;
-            padding: 0;
+            padding: 0
         }
 
         html {
-            scroll-behavior: smooth;
+            scroll-behavior: smooth
         }
 
         body {
-            width: 100%;
             font-family: 'Plus Jakarta Sans', sans-serif;
             background: var(--cream);
             color: var(--ink);
             line-height: 1.65;
-            overflow-x: hidden;
+            overflow-x: hidden
         }
 
         img {
             display: block;
-            max-width: 100%;
+            max-width: 100%
         }
 
         a {
             color: inherit;
-            text-decoration: none;
+            text-decoration: none
         }
 
         ul {
-            list-style: none;
+            list-style: none
         }
 
         button {
             font-family: inherit;
             cursor: pointer;
             border: none;
-            background: none;
+            background: none
         }
 
         h1,
@@ -85,32 +84,32 @@
         h4 {
             font-family: 'Fredoka', sans-serif;
             font-weight: 700;
-            line-height: 1.1;
+            line-height: 1.1
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 clamp(18px, 5vw, 52px);
+            padding: 0 clamp(18px, 5vw, 52px)
         }
 
         .section {
             padding: 96px 0 88px;
-            position: relative;
+            position: relative
         }
 
         .sec-navy {
             background: var(--n800);
-            color: var(--white);
+            color: var(--white)
         }
 
         .sec-deep {
             background: var(--n900);
-            color: var(--white);
+            color: var(--white)
         }
 
         .sec-cream {
-            background: var(--cream);
+            background: var(--cream)
         }
 
         .eyebrow {
@@ -120,27 +119,27 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            margin-bottom: 10px;
+            margin-bottom: 10px
         }
 
         .sec-head {
             max-width: 640px;
-            margin-bottom: 58px;
+            margin-bottom: 58px
         }
 
         .sec-head.center {
             margin: 0 auto 58px;
-            text-align: center;
+            text-align: center
         }
 
         .sec-title {
-            font-size: clamp(2rem, 3.5vw, 2.9rem);
+            font-size: clamp(2rem, 3.5vw, 2.9rem)
         }
 
         .sec-sub {
             margin-top: 14px;
             font-size: 1.04rem;
-            opacity: .85;
+            opacity: .85
         }
 
         /* BUTTONS */
@@ -163,58 +162,58 @@
         .btn-sun {
             background: var(--sun);
             color: var(--n900);
-            box-shadow: 0 8px 24px -6px rgba(255, 200, 69, .55);
+            box-shadow: 0 8px 24px -6px rgba(255, 200, 69, .55)
         }
 
         .btn-sun:hover {
             transform: translateY(-4px) scale(1.04);
-            box-shadow: 0 0 32px rgba(255, 200, 69, .5);
+            box-shadow: 0 0 32px rgba(255, 200, 69, .5)
         }
 
         .btn-coral {
             background: var(--coral);
             color: var(--white);
-            box-shadow: 0 8px 24px -6px rgba(255, 111, 89, .45);
+            box-shadow: 0 8px 24px -6px rgba(255, 111, 89, .45)
         }
 
         .btn-coral:hover {
-            transform: translateY(-4px) scale(1.04);
+            transform: translateY(-4px) scale(1.04)
         }
 
         .btn-mint {
             background: var(--mint);
-            color: var(--n900);
+            color: var(--n900)
         }
 
         .btn-mint:hover {
-            transform: translateY(-4px) scale(1.04);
+            transform: translateY(-4px) scale(1.04)
         }
 
         .btn-outline-w {
             border: 2px solid rgba(255, 255, 255, .4);
-            color: var(--white);
+            color: var(--white)
         }
 
         .btn-outline-w:hover {
             transform: translateY(-4px);
             background: rgba(255, 255, 255, .08);
-            border-color: rgba(255, 255, 255, .7);
+            border-color: rgba(255, 255, 255, .7)
         }
 
         .btn-outline-d {
             border: 2px solid var(--n800);
-            color: var(--n800);
+            color: var(--n800)
         }
 
         .btn-outline-d:hover {
             transform: translateY(-4px);
             background: var(--n800);
-            color: var(--white);
+            color: var(--white)
         }
 
         .btn-lg {
             padding: 16px 36px;
-            font-size: 1.08rem;
+            font-size: 1.08rem
         }
 
         .btn-shine::after {
@@ -225,17 +224,17 @@
             width: 60%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .25), transparent);
-            animation: shine 3s ease infinite;
+            animation: shine 3s ease infinite
         }
 
         @keyframes shine {
             0% {
-                left: -100%;
+                left: -100%
             }
 
             40%,
             100% {
-                left: 200%;
+                left: 200%
             }
         }
 
@@ -244,11 +243,11 @@
 
             0%,
             100% {
-                transform: translateY(0) rotate(var(--r, 0deg));
+                transform: translateY(0) rotate(var(--r, 0deg))
             }
 
             50% {
-                transform: translateY(-14px) rotate(var(--r, 0deg));
+                transform: translateY(-14px) rotate(var(--r, 0deg))
             }
         }
 
@@ -847,7 +846,9 @@
         }
 
         .ring-svg {
-            animation: spin 35s linear infinite
+            animation: spin 35s linear infinite;
+            width: min(100%,440px);
+            height: auto;
         }
 
         .ring-svg.r2 {
@@ -976,10 +977,10 @@
         .marquee-band {
             background: var(--sun);
             padding: 15px 0;
-            overflow: hidden;
+            overflow: clip;
             position: relative;
             z-index: 2;
-            transform: rotate(-1.2deg) scaleX(1.05);
+            transform: rotate(-1deg);
             margin: -6px 0;
             box-shadow: 0 6px 24px rgba(255, 200, 69, .3)
         }
@@ -1835,7 +1836,8 @@
             display: flex;
             gap: 16px;
             justify-content: center;
-            flex-wrap: wrap
+            flex-wrap: wrap;
+            flex-direction: column;
         }
 
         .cta-floats span {
@@ -2100,87 +2102,6 @@
             }
         }
 
-        /* ===========================
-        MOBILE RESPONSIVE
-        =========================== */
-        @media (max-width: 768px) {
-
-            .container{
-                padding: 0 20px;
-            }
-
-            .hero{
-                padding:120px 0 70px;
-            }
-
-            .hero-grid,
-            .about-grid,
-            .teacher-wrap,
-            .footer-grid{
-                grid-template-columns:1fr;
-                gap:35px;
-            }
-
-            .hero-art{
-                height:300px;
-                order:-1;
-            }
-
-            .hero-center{
-                width:150px;
-                height:150px;
-            }
-
-            .hero-center-inner{
-                width:65px;
-                height:65px;
-                font-size:2rem;
-            }
-
-            .hero-actions{
-                flex-direction:column;
-            }
-
-            .hero-actions .btn,
-            .cta-row .btn{
-                width:100%;
-            }
-
-            .prog-grid,
-            .why-grid,
-            .price-grid,
-            .testi-grid{
-                grid-template-columns:1fr;
-            }
-
-            .stats-grid{
-                grid-template-columns:repeat(2,1fr);
-            }
-
-            .t-facts{
-                grid-template-columns:1fr;
-            }
-
-            .teacher-frame{
-                width:240px;
-                height:300px;
-            }
-
-            .a-sticker,
-            .t-stick{
-                display:none;
-            }
-
-            .hero h1{
-                font-size:2.2rem;
-            }
-
-            .sec-title{
-                font-size:2rem;
-            }
-
-        }
-
         @media(max-width:680px) {
             .section {
                 padding: 68px 0 62px
@@ -2222,7 +2143,8 @@
 
             .cta-row .btn {
                 flex: 1;
-                min-width: 200px
+                width:100%;
+                min-width:0;
             }
         }
 
